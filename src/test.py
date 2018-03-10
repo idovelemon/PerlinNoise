@@ -26,23 +26,24 @@ if __name__ == "__main__":
         
         tk.mainloop()
 
-    def _draw_octave_noise_2d():
-        octave = perlin_noise.OctaveNoise2D(4, 0, 1.0, 1.0)
+    def _draw_perlin_noise_3d():
+        perlin = perlin_noise.PerlinNoise3D(0)
 
         tk = tkinter.Tk()
         canvas = tkinter.Canvas(tk, width = 256, height = 256, bg = "black")
         canvas.pack()
 
         noise_scale = 0.1
+        noise_depth = 0.0
 
         for i in range(256):
             for j in range(256):
-                noise = octave.noise(i * noise_scale, j * noise_scale)
+                noise = perlin.noise(i * noise_scale, j * noise_scale, noise_depth)
                 noise = (noise + 1.0) / 2.0
                 noise = int(noise * 256)
                 canvas.create_line(i, j, i + 1, j, fill = "#%02x%02x%02x" % (noise, noise, noise))
         
-        tk.mainloop()
+        tk.mainloop()        
 
     #_draw_perlin_noise_2d()
-    _draw_octave_noise_2d()
+    _draw_perlin_noise_3d()
