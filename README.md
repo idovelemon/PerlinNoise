@@ -14,3 +14,4 @@ This project provide some algorithms for classic Perlin Noise with python3.2 and
 - The test.py file demostrate generate perlin noise
 - The perlin_noise.glsl provide a shadertoy 3D Perlin noise generator for 2D Perlin noise animation
 - The perlin_noise_opt.glsl provide a optimization shadertoy 3D Perlin noise generator for 2D Perlin noise animation
+- The fBm.glsl provide a Fractical Browian Motion using optimization 3D Perlin noise
